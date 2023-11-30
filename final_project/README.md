@@ -14,11 +14,10 @@ and the current player is changed. The loop begins anew.
 If checkmate or Remis occurs there will be a message about who won or about the Remis
 ##### Board Class
 Here the board is initialized (as a list of lists, containing objects of the piece class) and there are the following functions
-__display()__: Displays the Board
-__is_valid_move()__: calls functions to check the input format, calculate the board indices, check move-logic and if the player tries to move
-                 into check.
-__is_valid_format()__: Checks for format e2 e4 and that the start and end-position are on a 8x8 board.
-__is_valid_logic()__: Checks if the player is trying to move its own piece and not trying to capture its own piece
+__display()__: Displays the Board  
+__is_valid_move()__: calls functions to check the input format, calculate the board indices, check move-logic and if the player tries to move into check.  
+__is_valid_format()__: Checks for format e2 e4 and that the start and end-position are on a 8x8 board.  
+__is_valid_logic()__: Checks if the player is trying to move its own piece and not trying to capture its own piece  
                   Then it calls the appropriate class to check the specific move logic.
 __is_check()__: Creates a virtual board, to then loop over every piece and check if they have a valid move to capture the king
             It can check the current position and the position after the proposed move and it can give back a dict of the checking pieces.

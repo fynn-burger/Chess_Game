@@ -17,21 +17,19 @@ Here the board is initialized (as a list of lists, containing objects of the pie
 __display()__: Displays the Board  
 __is_valid_move()__: calls functions to check the input format, calculate the board indices, check move-logic and if the player tries to move into check.  
 __is_valid_format()__: Checks for format e2 e4 and that the start and end-position are on a 8x8 board.  
-__is_valid_logic()__: Checks if the player is trying to move its own piece and not trying to capture its own piece  
-                  Then it calls the appropriate class to check the specific move logic.
+__is_valid_logic()__: Checks if the player is trying to move its own piece and not trying to capture its own piece
+                  Then it calls the appropriate class to check the specific move logic.  
 __is_check()__: Creates a virtual board, to then loop over every piece and check if they have a valid move to capture the king
-            It can check the current position and the position after the proposed move and it can give back a dict of the checking pieces.
+            It can check the current position and the position after the proposed move and it can give back a dict of the checking pieces.  
 __move_piece__: If the move is valid, this function is called to move the piece. It indexes into the list of lists and changes it. Here we
                 also have functions to check if rochade occurred, to then move the rook too, to check if a piece that could participate in
                 rochade is moved to save this and make a later rochade impossible, and a counter to count moves that do not involve a pawn
-                or a captured piece, for the Remis rule.
-__change_pawn()__: Changes the pawn to another figure if on the last line.
-__is_checkmate()__: Checks if the current player is in check, if he has any valid king move, and if there are moves to either block the check
-                    or capture the checking piece. (Using the is_check and other functions to find the king etc.)
-__is_patt()__: Checks by looping through every piece and then every field on the board, if there is any possible move if the king is not in check
-__is_remis()__: Checks if is_patt is True or the counter of move_piece is at 50. If yes it is Remis
-__saving and reloading__: I have a few functions to save a current game to two CSV files, one with the board and one with the relevant variables
-                          And there are functions to if reloaded initialize the board with this board and the reloaded variables
+                or a captured piece, for the Remis rule.  
+__change_pawn()__: Changes the pawn to another figure if on the last line.  
+__is_checkmate()__: Checks if the current player is in check, if he has any valid king move, and if there are moves to either block the check or capture the checking piece. (Using the is_check and other functions to find the king etc.)  
+__is_patt()__: Checks by looping through every piece and then every field on the board, if there is any possible move if the king is not in check  
+__is_remis()__: Checks if is_patt is True or the counter of move_piece is at 50. If yes it is Remis  
+__saving and reloading__: I have a few functions to save a current game to two CSV files, one with the board and one with the relevant variables. And there are functions to if reloaded initialize the board with this board and the reloaded variables  
 
 ##### Piece Class
 Short superclass for all the pieces, that are initialized with Type and Color, and there is one __str__ function
